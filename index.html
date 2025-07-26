@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kirby's Graphic Design Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm Kirby</h1>
+      <p>A passionate graphic designer who creates visually stunning work.</p>
+    </div>
+  </header>
+
+  <section class="section animate-on-scroll">
+    <div class="container">
+      <h2>Graphic Design Works</h2>
+      <div class="grid">
+        <div class="card"><img src="Images/Des1.png" alt="Design Work 1"></div>
+        <div class="card"><img src="Images/Des2.png" alt="Design Work 2"></div>
+        <div class="card"><img src="Images/Des3.png" alt="Design Work 3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section animate-on-scroll">
+    <div class="container">
+      <h2>Brochures</h2>
+      <div class="grid">
+        <div class="card"><img src="Images/Bro1.png" alt="Brochure 1"></div>
+        <div class="card"><img src="Images/Bro2.png" alt="Brochure 2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section animate-on-scroll">
+    <div class="container">
+      <h2>Posters</h2>
+      <div class="grid">
+        <div class="card"><img src="Images/Pos1.jpg" alt="Poster 1"></div>
+        <div class="card"><img src="Images/Pos2.png" alt="Poster 2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section animate-on-scroll">
+    <div class="container">
+      <h2>Contact Information</h2>
+      <ul class="contact-info">
+        <li>Email: <a href="mailto:ramos.christiankirby@gmail.com">ramos.christiankirby@gmail.com</a></li>
+        <li>Phone: 0965-729-8097</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kirby. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
